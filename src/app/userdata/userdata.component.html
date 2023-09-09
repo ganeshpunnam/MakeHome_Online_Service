@@ -1,0 +1,41 @@
+<h1 align="center"><b>User Data</b></h1>
+<div class="container">
+  <form #value="ngForm" (ngSubmit)="search(value.value)">
+    <input type="text" ngModel name="search" #name="ngModel">
+    <button type="submit" class="btn btn-info">Search</button>
+  </form>
+  <table class="table table-bordered table-stripped table-hover">
+    <thead class="bg-primary">
+      <tr>
+        <th>User Id</th>
+        <th>User Name</th>
+        <th>User Mail Id</th>
+        <th>Password</th>
+        <th>User Phone Number</th>
+        <th>User Gender</th>
+        <td>age</td>
+        
+        
+        <th>User Type</th>
+        
+      </tr>
+    </thead>
+    <tbody *ngFor="let u of user" class="bg-light">
+      <tr>
+        <td>{{u.u_id}}</td>
+        <td>{{u.u_name }}</td>
+        <td>{{u.u_gmail}}</td>
+        <td>{{u.u_password}}</td>
+        <td>{{u.u_number}}</td>
+
+        <td>{{u.u_gender}}</td>
+        <td>{{u.u_age}}</td>
+        <td>{{u.u_type}}</td>
+        
+        
+        
+       
+      </tr>
+    </tbody>
+  </table>
+</div>

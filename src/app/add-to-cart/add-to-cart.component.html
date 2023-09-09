@@ -1,0 +1,80 @@
+
+
+
+<button  routerLink="/user"class="fa fa-arrow-left">Back</button>
+<ng-container *ngIf="orders.length !=0">
+    <div class="container">
+<div class="card-table">
+    <div class="cart-product">
+        <table class="table table-responsive">
+            <thead>
+                <tr>
+                    <th>Product ID</th>
+                    <!-- <th>Order ID</th> -->
+                    <th>IMg</th>
+        
+                    <th>Product Name</th>
+                    <th>Product Price</th>
+           
+                    <th>Quantity</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody><tr *ngFor="let item of orders;let i= index">
+                <td>{{item.id}}</td>
+                <td><img style="width: 120px;" src="{{item.image}}" ></td>
+                <!-- <td>{{item.o_id}}</td> -->
+            
+                <td style="width:25%">{{item.name}}</td>
+                <td style="width:12%">{{item.price}}</td>
+
+                <td><input type="number" [(ngModel)]="item.qty"></td>
+                <td style="width:12%"> {{item.price | total: item.qty |currency:'INR'}}</td>
+                <td>
+                <button (click)="qtyupdate(item)" class="btn btn-success"><i class="fa fa-refresh"></i> </button>
+                <!-- <td>
+                    <input type="numder" class="qty" [value]="item.qty"
+                    (blur)="validateInput($event, i)">
+                    
+                    <div class="subtotal">
+                        {item.price * item.quantity}}
+
+                    </div>
+                </td> -->
+                
+                <td><button (click)="removeItem(item)" class="btn btn-danger"><i class="fa fa-trash"></i></button></td>
+
+</tr>
+<tr>
+    <td colspan="4" ></td>
+    <!-- <td><button (click)="emptycart()"class="btn btn-danger">Empty Cart</button></td> -->
+    <td><button routerLink="/user"class="btn btn-info">Order More</button></td>
+    <td><button routerLink="/bill"class="btn btn-primary">Pay</button></td>
+    <td><strong >Grand Total :Rs{{grandTotal}}</strong></td>
+
+
+</tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+    </div>
+</ng-container>
+
+
+
+
+<ng-container *ngIf="orders.length==0">
+    <div class="container">
+        <div class="card">
+            <h5 class="card-title">My Cart</h5>
+        </div>
+        <div class="center">
+            <img src="https://www.graphicsprings.com/filestorage/stencils/3055581cff0526602142cbb0bfba9fca.png?width=500&height=500" alt="">
+            <h3>Your cart is empty!</h3>
+            <h6>Add item to it now</h6>
+            <button routerLink="/user" class="btn btn-info">Shop Now</button>
+        </div>
+         
+    </div>
+</ng-container>

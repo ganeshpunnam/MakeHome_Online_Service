@@ -1,0 +1,66 @@
+.form-control {
+    border-radius: 3px;
+    width: 600px;
+    margin-left: 20px;
+}
+
+.search-icon {
+    position: absolute;
+    z-index: 10;
+    right: 40%;
+    top: 20px;
+    color: rgb(255, 115, 0);
+}
+.card-top { 
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background: #fff;
+    background-clip: border-box;
+  
+   
+}
+
+.item img {
+    width: 64px;
+}
+
+.item {
+    margin: 0px 12px;
+    text-align: center;
+}
+
+.item a:hover {
+    color: rgb(212, 53, 13);
+}
+
+.card {
+    padding: 20px;
+    margin: 50px;
+}
+
+.card img {
+    width: 200px;
+    height: 200px;
+    margin-bottom: 15px;
+    transition: 0.3s ease-in-out;
+}
+
+.card img:hover {
+    transition: 0.3s ease-in-out;
+    transform: scale(1.1);
+}
+.search-bar{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: black;
+
+}
+.input-text:focus{
+       
+  
+    box-shadow: 0px 0px 0px;
+    border-color:#ff0000;
+    outline: 0px;
+}

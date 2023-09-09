@@ -1,0 +1,93 @@
+<head>
+    <link rel="sty"
+</head>
+<header>
+   
+  <div class="navbar navbar-dark btn-warning shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">
+          <i style="font-size: 40px;" class="fa fa-home">&nbsp;
+              
+          </i>
+          <strong style="font-size: 30px;">MakeHome</strong>
+          <!-- <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+          </div>
+          <span class="fa fa-search search-icon"></span>
+      </div> -->
+      <div></div>
+      <div>
+        <form #value="ngForm" (ngSubmit)="search(value.value)">
+          <div  class="input-group mb-3">
+          <input type="text"  class="form-control input-text"  aria-label="Recipient's username" aria-describedby="basic-addon2" placeholder="Search by item name" ngModel name="search" #name="ngModel"  pattern=".*\S.*" required >
+          <div class="input-group-append">
+          <button  class="btn btn-outline-success btn-lg"  type="submit">
+            <i class="fa fa-search"></i></button>
+          </div></div>
+      </form>
+     
+    </div>
+          </div>
+     <div></div>
+      <button routerLink="/adtocart" class="btn btn-success" >
+          <i style="font-size: 30px;" class="fa fa-cart-plus"></i>
+          <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+      </button><div></div>
+      <button routerLink="/login" class="btn btn-danger">
+        <i style="font-size: 30px;" class="fa fa-sign-out"></i>
+        <div style="font-size: 10px;" class="badge bg-dark"></div>
+    </button>
+  </div>
+
+</header>
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+    <div class="item">
+        <button id="allbutton" (click)=reload()> <img src="https://previews.123rf.com/images/ylivdesign/ylivdesign1708/ylivdesign170830673/84615046-construction-material-icon-set-simple-style.jpg" width="30px"height="30px" alt="img not found"><h6>All products</h6>
+        </button>
+    </div>
+
+          <div class="item">
+            <button id="allbutton" (click)=searchh(1)><img src="https://cdn1.iconfinder.com/data/icons/construction-glyph-black/2048/392_-_Cement_Bag-512.png" alt="img not found" width="30px"height="30px"><h6>cement</h6></button>
+        </div>
+        <div class="item">
+            <button id="allbutton" (click)=searchh(2)><img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/steel-2118770-1783029.png"  alt="img not found" width="30px"height="30px"><h6>STEEL</h6></button>
+        </div>
+        <div class="item">
+            <button id="allbutton" (click)=searchh(3)> <img  src="https://www.clipartmax.com/png/middle/290-2902347_image-icon-stone-fortnite-wiki-fandom-powered-by-wikia-fortnite-stone.png" alt="img not found" width="30px"height="30px"><h6>BRICKS</h6></button>
+        </div>
+        <div class="item">
+          <button id="allbutton" (click)=searchh(4)> <img src="https://thumbs.dreamstime.com/b/vector-sand-icon-simple-flat-style-pile-isolated-white-background-yellow-dune-desert-beach-construction-site-162616213.jpg" alt="img not found" width="30px"height="30px"><h6>Sand</h6></button>
+      </div>
+       
+    </div>
+</div>
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+        <img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Check_Price......jpg" alt="pricecheck" title="pricecheck" />
+
+    </ng-template>  
+    <ng-template carouselSlide> <img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Discover_Guranteed_web...jpg" alt="Discover the Lowest price here" title="Discover the Lowest price here" />
+    </ng-template>  
+    <ng-template carouselSlide><img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Buy_Online_Save_Money_..jpg" alt="buy online save money" title="buy online save money" />
+
+    </ng-template>  
+  </owl-carousel-o>
+ 
+
+
+<div class="container">
+    <div class="row">
+        <!-- <ng-container *ngFor="let item of filterCategory | filter:searchKey:'name' "> -->
+          <ng-container *ngFor="let item of productList">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="item.name">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.name}}</h5>
+                <!-- <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.dsc}}</p> -->
+                <p><strong>Price:</strong> Rs.{{item.price}}</p>
+                <button class="btn btn-warning" (click)=addtocart(item)>Add to cart</button>
+            </div>
+        </ng-container>
+
+        
+    </div>
+</div>

@@ -1,0 +1,89 @@
+
+<!-- <div class="container" >
+    <div class="jumbotron">
+    <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" nonvalidate>  
+        <h2 style="color: RED;">Add Product</h2> -->
+        <section class="h-100 gradient-form" style="background-color: #eee;">
+          <div class="container py-5 h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+              <div class="col-xl-10">
+                <div class="card rounded-3 text-black">
+                  <div class="row g-0">
+                    <div class="col-lg-6">
+                      <div class="card-body p-md-5 mx-md-4">
+                        <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" nonvalidate>
+                          <div class="form-group">
+                          <h3 class="mt-1 mb-5 pb-1">Add Product</h3>
+            <!-- <div *ngIf="id.errors?.['required'] && id.touched"> Pls enter id </div> 
+            <div *ngIf="id.errors?.['minlength'] && id.touched"> pls enter atleast 3 digit</div> 
+        Id:<input type="text" ngModel name="id" #id="ngModel" required minlength="1" maxlength="5" >
+         <br>
+   -->
+   <div class="form-outline mb-4">
+        <div *ngIf="name.errors?.['required'] && name.touched"> Pls enter Name here</div> 
+        <div *ngIf="name.errors?.['minlength'] && name.touched"> pls enter atleast 4 charectors</div> 
+        <h3>Name:</h3><input class="form-control" type="text" ngModel name="name" #name="ngModel"  required minlength="4" maxlength="100" >
+        <br></div>
+        <div class="form-outline mb-4">
+        <div *ngIf="price.errors?.['required'] && price.touched"> Pls enter your price here</div> 
+        <div *ngIf="price.errors?.['minlength'] && price.touched"> pls enter price charectors</div> 
+      <h3>Price:</h3><input class="form-control" type="text" ngModel name="price" #price="ngModel" required minlength="1" maxlength="20" >
+        <br></div>
+        <!-- <div *ngIf="quantity.errors?.['required'] && quantity.touched"> Pls enter your quantity here</div> 
+        <div *ngIf="quantity.errors?.['minlength'] && quantity.touched"> pls enter price charectors</div>  -->
+        <div class="form-outline mb-4">
+       <h3> Quantity:</h3><input class="form-control" type="text" ngModel name="quantity" #price="ngModel" required minlength="1" maxlength="20" >
+        <br></div>
+        <!-- <div *ngIf="image.errors?.['required'] && image.touched"> Pls enter your quantity here</div> 
+        <div *ngIf="image.errors?.['minlength'] && image.touched"> pls enter price charectors</div> 
+        Upload:<input type="text" ngModel name="image" #image="ngModel" required minlength="3" maxlength="12" >
+        <br><br> -->
+       
+<!-- 
+        Upload:
+  <input type="file" id="myFile" ngModel name="image" #image="ngModel"><br> -->
+  <div class="form-outline mb-4">
+  <h3> img_path:</h3>
+  <input class="form-control" type="text" id="img_path" ngModel name="image" #image="ngModel"><br>
+</div>
+  <div class="form-outline mb-4">
+<div *ngIf="dsc.errors?.['required'] && dsc.touched"> Pls enter your dsc here</div> 
+<div *ngIf="dsc.errors?.['minlength'] && dsc.touched"> pls enter price charectors</div> 
+      <h3> Dsc:</h3><input class="form-control" type="text" ngModel name="dsc" #dsc="ngModel" required minlength="3" maxlength="100" >
+        <br></div>
+        <div class="form-outline mb-4">
+        <h3>  Pcid:</h3> <input class="form-control" type="text" ngModel name="pcid" #pcid="ngModel" required minlength="1" maxlength="12" >
+        <br>
+  
+      </div>
+       
+        <div class="form-outline mb-4"></div>
+        <div *ngIf="brand.errors?.['required'] && brand.touched"> Pls enter your dsc here</div> 
+<div *ngIf="brand.errors?.['minlength'] && brand.touched"> pls enter price charectors</div> 
+<h3>  Brand:</h3> <input class="form-control" type="text" ngModel name="brand" #brand="ngModel"><br>
+  
+      </div>
+      <div class="text-center pt-1 mb-5 pb-1"style="font: 1em sans-serif;">
+        <button class="btn btn-success btn-block fa-lg gradient-custom-2 mb-3"style="color: rgb(94, 57, 57) ; font-size: 16px;"  type="submit" [disabled]="regForm.invalid">ADD</button>
+      </div>
+    
+  </form>
+</div>
+</div>
+<div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+
+<div class="text-white px-3 py-4 p-md-5 mx-md-4">
+
+  <img [src]="myimage" alt="img not found" width="100%" height="50%">
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+    
+
+  <button type="button" routerLink="/Admin" class="btn btn-dark">Back</button>
+  

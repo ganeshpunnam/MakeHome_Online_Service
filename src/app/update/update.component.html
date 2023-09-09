@@ -1,0 +1,100 @@
+<!-- <body style="background-image: url('assets/img1.jpg');">
+<div style="color: bLACK;"  >
+       
+    <form #regForm="ngForm" (ngSubmit)="register(regForm.value)" nonvalidate >  
+            <div *ngIf="id.errors?.['required'] && id.touched"> Pls enter id </div> 
+            <div *ngIf="id.errors?.['minlength'] && id.touched"> pls enter atleast 3 digit</div> 
+        Id:<input type="text" ngModel name="id" #id="ngModel" required minlength="1" maxlength="5" >
+         <br><br>
+  
+        <div *ngIf="name.errors?.['required'] && name.touched"> Pls enter Name here</div> 
+        <div *ngIf="name.errors?.['minlength'] && name.touched"> pls enter atleast 4 charectors</div> 
+        Name:<input type="text" ngModel name="name" #name="ngModel"  required minlength="4" maxlength="10" >
+        <br><br>
+  
+        <div *ngIf="price.errors?.['required'] && price.touched"> Pls enter your price here</div> 
+        <div *ngIf="price.errors?.['minlength'] && price.touched"> pls enter price charectors</div> 
+        Price:<input type="text" ngModel name="price" #price="ngModel" required minlength="1" maxlength="20" >
+        <br><br>
+       
+        Quantity:<input type="text" ngModel name="quantity" #price="ngModel" required minlength="1" maxlength="20" >
+        <br><br>
+
+       
+
+        Upload:<br>
+  <input type="file" id="myFile" ngModel name="image" #image="ngModel"><br><br>
+  
+
+<div *ngIf="dsc.errors?.['required'] && dsc.touched"> Pls enter your dsc here</div> 
+<div *ngIf="dsc.errors?.['minlength'] && dsc.touched"> pls enter price charectors</div> 
+        Dsc:<input type="text" ngModel name="dsc" #dsc="ngModel" required minlength="3" maxlength="12" >
+        <br><br>
+        Pcid:<input type="text" ngModel name="pcid" #pcid="ngModel" required minlength="1" maxlength="12" >
+        <br><br>
+  
+       
+       
+       
+        <div *ngIf="brand.errors?.['required'] && brand.touched"> Pls enter your dsc here</div> 
+<div *ngIf="brand.errors?.['minlength'] && brand.touched"> pls enter price charectors</div> 
+        Brand:<input type="text" ngModel name="brand" #brand="ngModel"><br><br>
+  
+       
+  
+        <button type="submit" [disabled]="regForm.invalid">Register</button>
+        <div class="container">
+                <h1>Rose image</h1>
+            </div>
+           
+    </form>
+  </div>
+</body>
+  
+  product Id: <input type="hidden" ngModel name="id" [(ngModel)]=" product.id"><br>
+                 product Name: <input ngModel name="name" [(ngModel)]=" product.name"><br>
+                 product Price: <input ngModel name="price" [(ngModel)]=" product.price"><br>
+                 product quantity: <input ngModel name="quantity" [(ngModel)]=" product.<tr>
+                <td><label>Price</label></td>
+                <td><input type="number" name="price" [(ngModel)]="product.price"></td>
+            </tr> "><br>
+                 product Image: <input ngModel name="image" [(ngModel)]=" product.image"><br>
+                 product Description : <input ngModel name="dsc" [(ngModel)]=" product.dsc"><br>
+                 product Category Id: <input ngModel name="pcid" [(ngModel)]=" product.pcid"><br>
+                 product brand : <input ngModel name="brand" [(ngModel)]=" product.brand"><br>
+   -->
+   <form (ngSubmit)="onSubmit()">
+        <table  >
+           
+            <tr>
+                <td><label>Product Name</label></td>
+                <td><input type="text" name="item" [(ngModel)]="product.name"  ></td>
+            </tr>
+    
+            <tr>
+                <td><label>Price</label></td>
+                <td><input type="number" name="price" [(ngModel)]="product.price"></td>
+            </tr>  
+            <tr>
+                <td><label>Quantity</label></td>
+                <td><input type="number" name="quantity" [(ngModel)]="product.quantity"></td>
+            </tr> 
+            <tr>
+                <td><label>Image</label></td>
+                <td><input type="text" name="image" [(ngModel)]="product.image"></td>
+            </tr>
+            <tr>
+                <td><label>Description</label></td>
+                <td><input type="text" name="dsc" [(ngModel)]="product.dsc"></td>
+            </tr> 
+            <tr>
+                <td><label>Category Id</label></td>
+                <td><input type="number" name="pcid" [(ngModel)]="product.pcid"></td>
+            </tr>
+            <tr>
+                <td><label>Brand</label></td>
+                <td><input type="text" name="brand" [(ngModel)]="product.brand"></td>
+            </tr> 
+               </table>
+        <button type="submit" class="btn btn btn-primary" >Update Product</button>
+    </form>

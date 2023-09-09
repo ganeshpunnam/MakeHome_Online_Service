@@ -1,0 +1,337 @@
+<!-- 
+ 
+ <section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <form #userForm="ngForm" (ngSubmit)="submitUser(userForm.value)" novalidate>
+                  <h4 class="mt-1 mb-5 pb-1">Registration</h4>
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" placeholder="Username" name="u_name" ngModel pattern="" #u_name=ngModel required>
+                    <div *ngIf="u_name.errors?.['required'] && u_name.touched">This field is required</div>
+                    
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Gmail</label>
+                    <input type="text" class="form-control" placeholder="Name" name="u_gmail" ngModel  #u_gmail=ngModel required>
+                    <div *ngIf="u_gmail.errors?.['required'] && u_gmail.touched">This field is required</div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control" placeholder="password"  name="u_password" ngModel  #u_password=ngModel 
+                    required minlength="5" maxlength="10">
+                    <div *ngIf="u_password.errors?.['required'] && u_password.touched">This field is required</div>
+                    <div *ngIf="u_password.errors?.['minlength'] && u_password.touched">atleast 5 characters required</div>
+                  </div>
+                
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Pone No</label>
+                    <input type="text" class="form-control" placeholder="10 digit number"  name="u_number" ngModel  #u_number=ngModel required minlength="10" maxlength="10">
+                    <div *ngIf="u_number.errors?.['required'] && u_number.touched">This field is required</div>
+                    
+                    <div *ngIf="u_number.errors?.['minlength'] && u_number.touched">Enter 10 digit number</div>
+                    <div *ngIf="u_number.errors?.['maxlength'] && u_number.touched">Enter 10 digit number</div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Age</label>
+                    <input type="text" class="form-control" placeholder="Enter your age"  name="u_age" ngModel  #u_age=ngModel required minlength="1" maxlength="3">
+                    <div *ngIf="u_age.errors?.['required'] && u_age.touched">This field is required</div>
+                    
+                    <div *ngIf="u_age.errors?.['minlength'] && u_age.touched">Enter your age</div>
+                   
+                  </div>
+                  <div class="text-center pt-1 mb-5 pb-1"style="font: 1em sans-serif;">
+                    <button [routerLink]="'login'" class="btn btn-success btn-block fa-lg gradient-custom-2 mb-3"style="color: rgb(94, 57, 57) ; " [disabled]="!userForm.valid">Register
+                      in</button>
+                  </div>
+                  
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h2 class="mb-4" style="color: rgb(94, 57, 57) ;"><i>Welcome to Makehome</i></h2>
+                <p class="large mb-0"style="color: rgb(94, 57, 57) ;">Register here and enjoy your work...!
+                </p>
+                <img [src]="myimage" alt="img not found" width="100%" height="50%">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<button type="button" routerLink="/login" class="btn btn-dark">Login</button> -->
+
+
+
+<!-- 
+<section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                
+
+  <form #userForm="ngForm" (ngSubmit)="submitUser(userForm.value)" novalidate>
+    <div class="form-group">
+      <label for="u_name">User Name: </label>
+      <input type="u_name"  class="form-control" placeholder="Enter User Name" u_name="uname" ngModel   pattern="" required #u_name ="ngModel"
+  
+      [class.is-invalid]= "u_name.invalid && u_name.touched " style="width: 40%;">
+  
+      <div *ngIf="u_name.errors && (u_name.dirty && u_name.touched)" class="alert-u_name alert-danger-u_name"><br>
+  
+              <div [hidden]="!u_name.errors['pattern']">
+                
+              </div>
+              <div [hidden]="!u_name.errors['required']">
+                Name is required
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="u_gmail">Email: </label>
+              <input type="u_gmail"  class="form-control" placeholder="Enter email" name="u_gmail" ngModel   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #u_gmail ="ngModel"
+          
+              [class.is-invalid]= "u_gmail.invalid && u_gmail.touched " style="width: 40%;">
+          
+              <div *ngIf="u_gmail.errors && (u_gmail.dirty && u_gmail.touched)" class="alert-u_gmail alert-danger-u_gmail"><br>
+          
+                      <div [hidden]="!u_gmail.errors['pattern']">
+                        Please input a Gmail.
+                      </div>
+                      <div [hidden]="!u_gmail.errors['required']">
+                        Email is required
+                      </div>
+                    </div>
+
+
+
+
+
+            <div class="form-group">
+              <label for="u_password">Password</label>
+              <input type="u_password"  class="form-control" placeholder="Enter Password" name="u_password" ngModel   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" required #u_password ="ngModel"
+          
+              [class.is-invalid]= "u_password.invalid && u_password.touched " style="width: 40%;" >
+          
+              <div *ngIf="u_password.errors && (u_password.dirty && u_password.touched)" class="alert-u_password alert-danger-u_password" ><br>
+          
+                      <div [hidden]="!u_password.errors['pattern']">
+                      
+                        Password is Too Weak. <br><br>
+                        At least 8 characters in length<br><br>
+                        At least Lowercase letter<br><br>
+                        At least Uppercase letter<br><br>
+                        At least Number<br><br>
+                        At least Special character<br><br>
+                      </div>
+                      <div [hidden]="!u_password.errors['required']">
+                      Password is required
+                      </div>
+                    </div>
+        
+            
+            
+        
+        
+                    <div class="form-group">
+                      <label for="u_number">Mobile </label>
+                      <input type="u_number"  class="form-control" placeholder="Enter Phone Number" name="u_number" ngModel   pattern="^((\\+91-?)|0)?[0-9]{10}$" required #u_number ="ngModel"
+                  
+                      [class.is-invalid]= "u_number.invalid && u_number.touched " style="width: 40%;" >
+                  
+                      <div *ngIf="u_number.errors && (u_number.dirty && u_number.touched)" class="alert-u_number alert-danger-u_number" ><br>
+                  
+                              <div [hidden]="!u_number.errors['pattern']">
+                                Please input a Phone Number.
+                              </div>
+                              <div [hidden]="!u_number.errors['required']">
+                              Phone Number is required
+                              </div>
+                            </div>
+
+
+                            <div class="form-group">
+                              <label for="u_age">Age </label>
+                              <input type="u_age"  class="form-control" placeholder="Enter your Age" name="u_age" ngModel   pattern="^((\\+91-?)|0)?[0-9]{2}$" required #u_age ="ngModel"
+                          
+                              [class.is-invalid]= "u_age.invalid && u_age.touched " style="width: 40%;" >
+                          
+                              <div *ngIf="u_age.errors && (u_age.dirty && u_age.touched)" class="alert-u_age alert-danger-u_age" ><br>
+                          
+                                      <div [hidden]="!u_age.errors['pattern']">
+                                        Please input a Age.
+                                      </div>
+                                      <div [hidden]="!u_age.errors['required']">
+                                      Age is required
+                                      </div>
+                                    </div>
+           
+            
+        
+           
+        
+            <button type="submit" [disabled]="userForm.invalid" routerLink="login">Register</button>
+          </div></div></div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              
+             <div class="text-white px-3 py-4 p-md-5 mx-md-4" >
+                <h2 class="mb-4" style="color: rgb(94, 57, 57) ;"><i>Welcome to Makehome</i></h2>
+                <p class="large mb-0"style="color: rgb(94, 57, 57) ;">Register here and enjoy your work...!
+                </p>
+                <img [src]="myimage" alt="img not found" width="100%" height="50%"> -->
+              <!-- </div>
+          
+        </div>
+                    </div> -->
+                 
+
+                     <!-- <div class="form-outline mb-4">
+                    <label for="u_name">User Name: </label>
+      <input type="text"  class="form-control" placeholder="Enter User Name" u_name="u_name" ngModel   required #u_name ="ngModel"
+  
+      [class.is-invalid]= "u_name.invalid && u_name.touched " style="width: 40%;">
+  
+      <div *ngIf="u_name.errors && (u_name.dirty && u_name.touched)" class="alert-u_name alert-danger-u_name"><br>
+   -->
+              <!-- <div [hidden]="!u_name.errors['pattern']">
+                
+              </div>
+              <div [hidden]="!u_name.errors['required']">
+                Name is required
+              </div> -->
+            <!-- </div>
+                    
+                  </div> -->
+
+
+
+
+                     
+ <section class="h-100 gradient-form" style="background-color: #eee;">
+  <div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-xl-10">
+        <div class="card rounded-3 text-black">
+          <div class="row g-0">
+            <div class="col-lg-6">
+              <div class="card-body p-md-5 mx-md-4">
+                <form #userForm="ngForm" (ngSubmit)="submitUser(userForm.value)" novalidate>
+                  <div class="form-group">
+                  <h4 class="mt-1 mb-5 pb-1">Registration</h4>
+                 
+                  <div class="form-outline mb-4">
+                    <label class="form-label">Username</label>
+                    <input type="text" class="form-control" placeholder="Username" name="u_name" ngModel pattern="" #u_name=ngModel required>
+                    <div *ngIf="u_name.errors?.['required'] && u_name.touched">This field is required</div>
+                    
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label for="u_gmail">Email: </label>
+              <input type="u_gmail"  class="form-control" placeholder="Enter email" name="u_gmail" ngModel   pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" required #u_gmail ="ngModel"
+          
+              [class.is-invalid]= "u_gmail.invalid && u_gmail.touched " style="width: 40%;">
+          
+              <div *ngIf="u_gmail.errors && (u_gmail.dirty && u_gmail.touched)" class="alert-u_gmail alert-danger-u_gmail"><br>
+          
+                      <div [hidden]="!u_gmail.errors['pattern']">
+                        Please input a Gmail.
+                      </div>
+                      <div [hidden]="!u_gmail.errors['required']">
+                        Email is required
+                      </div>
+                    </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label for="u_password">Password</label>
+                    <input type="password"  class="form-control" placeholder="Enter Password" name="u_password" ngModel   pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}" required #u_password ="ngModel"
+                
+                    [class.is-invalid]= "u_password.invalid && u_password.touched " style="width: 40%;" >
+                
+                    <div *ngIf="u_password.errors && (u_password.dirty && u_password.touched)" class="alert-u_password alert-danger-u_password" ><br>
+                
+                            <div [hidden]="!u_password.errors['pattern']">
+                            
+                              Password is Too Weak. <br><br>
+                              At least 8 characters in length<br><br>
+                              At least Lowercase letter<br><br>
+                              At least Uppercase letter<br><br>
+                              At least Number<br><br>
+                              At least Special character<br><br>
+                            </div>
+                            <div [hidden]="!u_password.errors['required']">
+                            Password is required
+                            </div>
+                          </div>
+              
+                  </div>
+                
+                  <div class="form-outline mb-4">
+                    <label for="u_number">Mobile </label>
+                    <input type="u_number"  class="form-control" placeholder="Enter Phone Number" name="u_number" ngModel   pattern="^((\\+91-?)|0)?[0-9]{10}$" required #u_number ="ngModel"
+                
+                    [class.is-invalid]= "u_number.invalid && u_number.touched " style="width: 40%;" >
+                
+                    <div *ngIf="u_number.errors && (u_number.dirty && u_number.touched)" class="alert-u_number alert-danger-u_number" ><br>
+                
+                            <div [hidden]="!u_number.errors['pattern']">
+                              Please input a Phone Number.
+                            </div>
+                            <div [hidden]="!u_number.errors['required']">
+                            Phone Number is required
+                            </div>
+                          </div>
+                  </div>
+                  <div class="form-outline mb-4">
+                    <label for="u_age">Age </label>
+                    <input type="u_age"  class="form-control" placeholder="Enter your Age" name="u_age" ngModel   pattern="^((\\+91-?)|0)?[0-9]{2}$" required #u_age ="ngModel"
+                
+                    [class.is-invalid]= "u_age.invalid && u_age.touched " style="width: 40%;" >
+                
+                    <div *ngIf="u_age.errors && (u_age.dirty && u_age.touched)" class="alert-u_age alert-danger-u_age" ><br>
+                
+                            <div [hidden]="!u_age.errors['pattern']">
+                              Please input a Age.
+                            </div>
+                            <div [hidden]="!u_age.errors['required']">
+                            Age is required
+                            </div>
+                          </div>
+                  </div>
+                  <div class="text-center pt-1 mb-5 pb-1"style="font: 1em sans-serif;">
+                    <button  class="btn btn-success btn-block fa-lg gradient-custom-2 mb-3"style="color: rgb(94, 57, 57) ; " [disabled]="!userForm.valid">Register
+                      in</button>
+                      <!-- [routerLink]="'login'" -->
+                  </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+            <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
+              
+              <div class="text-white px-3 py-4 p-md-5 mx-md-4">
+                <h2 class="mb-4" style="color: rgb(94, 57, 57) ;"><i>Welcome to Makehome</i></h2>
+                <p class="large mb-0"style="color: rgb(94, 57, 57) ;">Register here and enjoy your work...!
+                </p>
+                <img [src]="myimage" alt="img not found" width="100%" height="50%">
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<button type="button" routerLink="/login" class="btn btn-dark">Login</button> 

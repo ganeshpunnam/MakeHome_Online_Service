@@ -1,0 +1,21 @@
+<h1 align="center"><b>Categories</b></h1>
+<div class="container">
+  <table class="table table-bordered table-stripped table-hover">
+    <thead class="bg-info">
+      <tr>
+        <th>Category Id</th>
+        <th>Category Name</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let c of category" class="bg-primary">
+      <tr>
+        <td>{{c.pcid}}</td>
+        <td>{{c.pcname}}</td>
+        <td>
+          <button (click)="delete(c.c_id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

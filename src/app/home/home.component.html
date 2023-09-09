@@ -1,0 +1,432 @@
+<router-outlet></router-outlet>
+<header>
+   
+  <div class="navbar navbar-dark btn-warning shadow-sm">
+      <div class="navbar-brand align-item-center d-flex">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <i style="font-size: 40px;" class="fa fa-home">&nbsp;
+              
+          </i>
+          <strong style="font-size: 30px;">MakeHome</strong>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div class="form-group">
+              <input type="text" class="form-control" [(ngModel)]="searchTerm" (keyup)="search($event)" placeholder="search products">
+              
+            </div>
+          <span class="fa fa-search search-icon fa-2x" style="color: black;"></span>
+
+
+      </div>
+      <button routerLink="/login" class="btn btn-success">
+          <i style="font-size: 30px;" class="fa fa-cart-plus"></i>
+          
+          <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+      </button>
+      <button routerLink="/login" class="btn btn-success">
+        <i style="font-size: 30px;" class="fa fa-sign-in"></i>
+        
+        <div style="font-size: 10px;" class="badge bg-dark"></div>
+    </button>
+    <button routerLink="/userRegister" class="btn btn-warning">
+        <i style="font-size: 30px;" class="fa fa-user-plus"></i>
+        
+        <div style="font-size: 10px;" class="badge bg-dark"></div>
+    </button>
+  </div>
+  
+</header>
+<div class="card-top container-fluid">
+  <div class="container d-flex">
+      <div class="item">
+        <a routerLink="/login">
+          
+              <img src="https://previews.123rf.com/images/ylivdesign/ylivdesign1708/ylivdesign170830673/84615046-construction-material-icon-set-simple-style.jpg" alt="not found">
+              <h6>All Products</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a routerLink="/login">
+        
+              <img src="https://cdn1.iconfinder.com/data/icons/construction-glyph-black/2048/392_-_Cement_Bag-512.png" alt="not found">
+              <h6>CEMENT</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a routerLink="/login">
+          
+              <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/steel-2118770-1783029.png" alt="not found">
+              <h6>STEEL</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a routerLink="/login">
+          
+              <img style="width: 62px; margin-top: 5px;" src="https://www.clipartmax.com/png/middle/290-2902347_image-icon-stone-fortnite-wiki-fandom-powered-by-wikia-fortnite-stone.png" alt="not found">
+              <h6>BRICKS</h6>
+          </a>
+      </div>
+      <div class="item">
+        <a routerLink="/login">
+            <img src="https://thumbs.dreamstime.com/b/vector-sand-icon-simple-flat-style-pile-isolated-white-background-yellow-dune-desert-beach-construction-site-162616213.jpg" alt="not found">
+            <h6>SAND</h6>
+        </a>
+    </div>
+  </div>
+</div>
+
+  <owl-carousel-o [options]="customOptions">
+    <ng-template carouselSlide>
+        <img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Check_Price......jpg" alt="pricecheck" title="pricecheck" />
+
+    </ng-template>  
+    <ng-template carouselSlide> <img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Discover_Guranteed_web...jpg" alt="Discover the Lowest price here" title="Discover the Lowest price here" />
+    </ng-template>  
+    <ng-template carouselSlide><img src="https://cdn-media.buildersmart.in/media/bannerslider/bannerslider/Buy_Online_Save_Money_..jpg" alt="buy online save money" title="buy online save money" />
+
+    </ng-template>  
+  </owl-carousel-o>
+ 
+
+
+<div class="container">
+    <div class="row">
+        <ng-container *ngFor="let item of filterCategory | filter:searchKey:'name' ">
+            <div class="card col-md-3">
+                <img src="{{item.image}}" alt="item.name">
+                <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.name}}</h5>
+                <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;max-width: 100ch;">{{item.dsc}}</p>
+                <p><strong>Price:</strong> Rs.{{item.price}}</p>
+                <button class="btn btn-warning" routerLink="/login">Add to cart</button>
+            </div>
+        </ng-container>
+
+    </div>
+</div>
+<!-- ><div class="vc_row-full-width vc_clearfix"></div><div data-vc-full-width="true" data-vc-full-width-init="false" data-vc-stretch-content="true" class="vc_row wpb_row vc_row-fluid content-wrap2"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"><div class="vc_row wpb_row vc_inner vc_row-fluid vc_custom_1501124947258"><div class="wpb_column vc_column_container vc_col-sm-12"><div class="vc_column-inner"><div class="wpb_wrapper"> <div id="sw_brand_sw-brand-11507690631" class="responsive-slider sw-brand-container-slider  loading clearfix" data-lg="8" data-md="6" data-sm="4" data-xs="2" data-mobile="1" data-speed="1000" data-scroll="1" data-interval="5000" data-autoplay="false"> -->
+    <div class="card-top container-fluid">
+        <div class="container d-flex">
+        
+    <div class="item1">
+   
+    <a href="https://constructionkart.in/product_brand/acc/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/acc-logo.png" class="attachment-170x87 size-170x87" alt="acc logo" decoding="async" loading="lazy" title="acc logo" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+    <a href="https://constructionkart.in/product_brand/ashirvad/"><img width="170" height="87" src="https://constructionkart.in/wp-content/uploads/2021/05/aashirwad-brand-1.jpg" class="attachment-170x87 size-170x87" alt="aashirwad brand (1)" decoding="async" loading="lazy" title="aashirwad brand (1)" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+   
+   
+    <a href="https://constructionkart.in/product_brand/bharathi/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/Bharati_cement.jpg" class="attachment-170x87 size-170x87" alt="Bharati_cement" decoding="async" loading="lazy" title="Bharati_cement" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+     
+    
+    
+    <a href="https://constructionkart.in/product_brand/birlaa1/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/Birla_A1.jpg" class="attachment-170x87 size-170x87" alt="Birla_A1" decoding="async" loading="lazy" title="Birla_A1" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+   
+    <a href="https://constructionkart.in/product_brand/cera/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/ceram_tiles.jpg" class="attachment-170x87 size-170x87" alt="Cera Tiles" decoding="async" loading="lazy" title="Cera Tiles" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+  
+    
+    <a href="https://constructionkart.in/product_brand/deccan/"><img width="137" height="63" src="https://constructionkart.in/wp-content/uploads/2020/06/deccan.jpg" class="attachment-170x87 size-170x87" alt="deccan" decoding="async" loading="lazy" title="deccan" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+  
+    <a href="https://constructionkart.in/product_brand/greenply/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/greenplywood.jpg" class="attachment-170x87 size-170x87" alt="greenplywood" decoding="async" loading="lazy" title="greenplywood" /></a> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+   
+  
+    <a href="https://constructionkart.in/product_brand/jsw/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/jsw-1.jpg" class="attachment-170x87 size-170x87" alt="jsw" decoding="async" loading="lazy" title="jsw" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+   
+    
+     <a href="https://constructionkart.in/product_brand/maha/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/Maha_Cement.jpg" class="attachment-170x87 size-170x87" alt="Maha_Cement" decoding="async" loading="lazy" title="Maha_Cement" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+
+    
+    <a href="https://constructionkart.in/product_brand/mayur/"><img width="137" height="62" src="https://constructionkart.in/wp-content/uploads/2020/06/mayurplywood.jpg" class="attachment-170x87 size-170x87" alt="mayurplywood" decoding="async" loading="lazy" title="mayurplywood" /></a>  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    
+    
+  
+    
+    </div> </div> </div>
+
+    <footer>
+        <div class="footer-top">
+        <div class="footer-top-links-block">
+        <ul>
+        <li><a class="testimonials" href="https://www.buildersmart.in/testimonials">Testimonials</a></li>
+        <li><a target="_blank" class="services" href="https://www.buildersmart.in/service-providers">Services</a></li>
+        <li><a target="_blank" class="sellers" href="https://www.buildersmart.in/sellers">Sellers</a></li>
+        <li><a target="_blank" class="interiordesigners" href="https://www.buildersmart.in/interior-designers">Interiors</a></li>
+        <li><a class="customhomes" href="https://www.buildersmart.in/custom-homes">Build Your Home</a></li>
+        <li><a class="post-requirements" href="https://www.buildersmart.in/post-requirements">Post Your Requirement</a></li>
+        <li><a class="contacts" href="https://www.buildersmart.in/contacts">Contact Us</a></li>
+        </ul>
+        </div>
+        <div class="footer-wrapper-inner">
+        
+        <div class="row">
+        <div class="col-md-2 col-sm-6">
+        <div class="footer-area">
+        <div class="block-title-footer">Popular Searches</div>
+        <ul class="block-content-footer">
+        <li><a href="https://www.buildersmart.in/cement/filter/manufacturer/ultratech/">Ultratech Cement Price</a></li>
+        <li><a href="https://www.buildersmart.in/cement/filter/manufacturer/birla-a1,ultratech/">Birla A1 Cement Price</a></li>
+        <li><a href="https://www.buildersmart.in/cement/">Cement Wholesale Price</a></li>
+        <li><a href="https://www.buildersmart.in/cement/filter/manufacturer/kcp-cement/">KCP Cement Price</a></li>
+        <li><a href="https://www.buildersmart.in/">Building Materials Online</a></li>
+        <li><a href="https://www.buildersmart.in/cement/filter/manufacturer/bharathi,kcp-cement/">Bharathi Cement Price</a></li>
+        <li><a href="https://www.buildersmart.in/cement-price-in-hyderabad-today/">Cement Price in Hyderabad</a></li>
+        <li><a href="https://www.buildersmart.in/Services/">Construction Services Online</a></li>
+        <li><a href="https://www.buildersmart.in/">Building Materials Suppliers</a></li>
+        </ul>
+        </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+        <div class="footer-area">
+        <div class="block-title-footer">Daily Updated Category</div>
+        <ul class="block-content-footer">
+        <li><a href="https://www.buildersmart.in/cement/">Cement Price Online</a></li>
+        <li><a href="https://www.buildersmart.in/cement/">Cement Price Today</a></li>
+        <li><a href="https://www.buildersmart.in/cement/">List of Cement Brands</a></li>
+        <li><a href="https://www.buildersmart.in/cement/">Low Price Cement</a></li>
+        <li><a href="https://www.buildersmart.in/cement/">Best Quality Cement</a></li>
+        <li><a href="https://www.buildersmart.in/tmt-steel-price-in-hyderabad-today/">TMT Steel Price</a></li>
+        <li><a href="https://www.buildersmart.in/tmt-steel/">TMT Steel bars Online</a></li>
+        <li><a href="https://www.buildersmart.in/tmt-steel/">Best TMT Steel Brands</a></li>
+        <li><a href="https://www.buildersmart.in/tmt-steel/">Low Price TMT Steel Bars</a></li>
+        </ul>
+        </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+        <div class="footer-area">
+        <div class="block-title-footer">Popular Sub Categories</div>
+        <ul class="block-content-footer">
+        <li><a href="https://www.buildersmart.in/cement/53-grade-cement/">OPC Cement Price</a></li>
+        <li><a href="https://www.buildersmart.in/cement/ppc/">PPC Cement Price</a></li>
+        <li><a href="https://www.buildersmart.in/cement/">Super Cement Price</a></li>
+        <li><a href="https://www.buildersmart.in/electrical/wires-and-cables/">Wires and Cables Price</a></li>
+        <li><a href="https://www.buildersmart.in/wooden-products/plywood/">Plywood Price</a></li>
+        <li><a href="https://www.buildersmart.in/paints-and-finishes/">Wall Paints Price</a></li>
+        <li><a href="https://www.buildersmart.in/tiles/">Floor Tiles Price</a></li>
+        <li><a href="https://www.buildersmart.in/electrical/modular-switches-and-sockets/">Electrical Switches Price</a></li>
+        <li><a href="https://www.buildersmart.in/lighting-products/">LED Lights Online</a></li>
+        </ul>
+        </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+        <div class="footer-area">
+        <div class="block-title-footer">Other Categories</div>
+        <ul class="block-content-footer">
+        <li><a href="https://www.buildersmart.in/plumbing-html/">Plumbing Materials Online</a></li>
+        <li><a href="https://www.buildersmart.in/electrical/">Electrical Materials Online</a></li>
+        <li><a href="https://www.buildersmart.in/bricks-and-blocks-price-in-hyderabad-today/">Bricks & Blocks Online</a></li>
+        <li><a href="https://www.buildersmart.in/tiles/">Tiles Online</a></li>
+        <li><a href="https://www.buildersmart.in/wooden-products/">Wooden Products Online</a></li>
+        <li><a href="https://www.buildersmart.in/hardware-fixtures/">Hardware Fixtures Online</a></li>
+        <li><a href="https://www.buildersmart.in/bathroom-accessories/">Bathroom Accessories Online</a></li>
+        <li><a href="https://www.buildersmart.in/lighting-products/">Lighting & Fixtures Online</a></li>
+        </ul>
+        </div>
+        </div>
+        <div class="col-md-4 col-sm-6">
+        
+        <div class="downloadapp-block">
+        <div class="block-footer-company-ttl">Download the APP Now</div>
+        <div class="app-links">
+        <div class="store-icon"><a href="https://play.google.com/store/apps/details?id=com.beetlerim.BuilderSmart" target="_blank"><img src="https://cdn-media.buildersmart.in/media/wysiwyg/allurestore/play-store.png" border="0" title="BuildersMart Android Mobile App" alt="BuildersMart Android  Mobile App" /></a></div>
+        <div class="store-icon"><a href="https://itunes.apple.com/in/app/id1450632073" target="_blank"><img src="https://cdn-media.buildersmart.in/media/wysiwyg/allurestore/app-store.png" border="0" title="BuildersMart IOS Mobile App" alt="BuildersMart IOS Mobile App" /></a></div>
+        </div> </div>
+        </div>
+        </div>
+        </div>
+        </div>
+        <div class="footer-top dark-theme">
+        <div class="footer-wrapper-inner">
+        <div class="row">
+        <div class="col-md-3 col-sm-6">
+        <div class="newsletter-block">
+        <h6>Mail Us</h6>
+        <p class="address">BuildersMart <br>
+        # 8-10, Fortune Chambers , <br>
+        Image Gardens Lane, Hi-Tech City,<br>
+        Madhapur, Hyderabad-500081.<br>
+        Telangana.</p>
+        </div>
+        </div>
+        <div class="col-md-3 col-sm-6">
+        <div class="newsletter-block">
+        <h6>Contact With Us</h6>
+        <p class="address">Phone : <a href="tel:9339330099">9339330099</a></p>
+        <p class="address">WhatsApp : <a href="https://api.whatsapp.com/send?phone=919339330099" target="_blank"> +91 9339330099</a></p>
+        <p class="address">Email : <a href="/cdn-cgi/l/email-protection#b8d1d6ded7f8dacdd1d4dcddcacbd5d9cacc96d1d6"> <span class="_cf_email_" data-cfemail="2940474f46694b5c40454d4c5b5a44485b5d074047">[email&#160;protected]</span></a></p>
+        </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+        <div class="footer-area">
+        <h6>About</h6>
+        <ul>
+        <li><a href="https://www.buildersmart.in/about-us/">About BuildersMart?</a></li>
+        <li><a href="https://www.buildersmart.in/Services/">Construction Services</a></li>
+        <li><a href="https://www.buildersmart.in/vendors/">Vendors</a></li>
+        <li><a href="https://www.buildersmart.in/contacts/">Our Location</a></li>
+        <li><a href="https://www.buildersmart.in/careers/">Careers</a></li>
+        <li><a href="https://www.buildersmart.in/blogs">Blog</a></li>
+        </ul>
+        </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+        <div class="footer-area">
+        <h6>Policy</h6>
+        <ul>
+        <li><a href="https://www.buildersmart.in/privacy-policy/">Privacy Policy</a></li>
+        <li><a href="https://www.buildersmart.in/shipping_policy/">Shipping Policy</a></li>
+        <li><a href="https://www.buildersmart.in/terms_conditions/">Terms & Conditions</a></li>
+        <li><a href="https://www.buildersmart.in/faq/">FAQ</a></li>
+        </ul>
+        </div>
+        </div>
+        <div class="col-md-2 col-sm-6">
+        <div class="footer-area">
+        <h6>My Account</h6>
+        <ul>
+        <li><a href="https://www.buildersmart.in/customer/account">My Account</a></li>
+        <li><a href="https://www.buildersmart.in/wishlist/">My Wishlist</a></li>
+        <li><a href="https://www.buildersmart.in/sales/order/history/">My Orders</a></li>
+        <li><a href="https://www.buildersmart.in/trackorder/index/">Order Tracking</a></li>
+        </ul>
+        </div>
+        </div> </div>
+        </div>
+        </div>
+        <div class="footer-top-widget">
+        <div class="footer-top-inner">
+        <div class="row">
+        <div class="col-md-5 col-sm-6">
+        <div class="payment-modes">
+        <strong>Payment</strong>
+        <img src="https://cdn-media.buildersmart.in/media/wysiwyg/allurestore/payment-methods.png" alt="BuildersMART payment methods" height="25" title="BuildersMART payment methods" />
+        </div>
+        </div>
+        <div class="col-md-4 col-sm-3">
+        </div>
+        <div class="col-md-3 col-sm-3">
+        <strong>Follow us on</strong>
+        <ul class="social-media">
+        <li><a target="_blank" href="https://www.facebook.com/buildersmart.in/" title="Facebook"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        <li><a target="_blank" href="https://twitter.com/BuildersMartIND" title="Twitter"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+        <li><a target="_blank" href="https://www.instagram.com/buildersmart.in/" title="Instagram"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+        <li><a target="_blank" href="https://www.linkedin.com/company/buildersmart-in" title="LinkedIn"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+        </ul>
+        </div> </div>
+        </div>
+        </div>
+        <div class="footer-bottom-links">
+        <div class="footer-bottom-links-inner">
+        <div class="row">
+        <div class="col-md-12 col-sm-12">
+        <h3>Brand Directory</h3>
+        <div class="cat-links">
+        <span>Cement : </span>
+        <a href="https://www.buildersmart.in/cement/53-grade-cement">OPC-53 Grade Cement</a><a href="https://www.buildersmart.in/cement/ppc">PPC Cement</a>
+        </div>
+        <div class="cat-links">
+        <span>Sand & Aggregates : </span>
+        <a href="https://www.buildersmart.in/sand">Sand & Aggregates</a>
+        </div>
+        <div class="cat-links">
+        <span>TMT Steel Bars : </span>
+        <a href="https://www.buildersmart.in/tmt-steel/fe-500-grade-tmt-bars">Fe-500 Grade TMT Bars</a><a href="https://www.buildersmart.in/tmt-steel/fe-550-grade-tmt-bars">Fe-550 Grade TMT Bars</a><a href="https://www.buildersmart.in/tmt-steel/tmt-binding-wire">TMT Binding Wire</a><a href="https://www.buildersmart.in/tmt-steel/couplers">Rebar Couplers</a>
+        </div>
+        <div class="cat-links">
+        <span>Bricks & Blocks : </span>
+        <a href="https://www.buildersmart.in/bricks-blocks/concrete-solid-blocks">Concrete Solid Blocks</a><a href="https://www.buildersmart.in/bricks-blocks/flyash-solid-blocks-76">FlyashBricks</a><a href="https://www.buildersmart.in/bricks-blocks/autoclaved-aerated-concrete-aac-blocks">Autoclaved Aerated Concrete (AAC) Blocks</a><a href="https://www.buildersmart.in/bricks-blocks/red-bricks">Red Bricks</a>
+        </div>
+        <div class="cat-links">
+        <span>Electrical : </span>
+        <a href="https://www.buildersmart.in/electrical/conduit-pipes-and-fittings">Conduit Pipes and Fittings</a><a href="https://www.buildersmart.in/electrical/wires-and-cables">Wires and Cables</a><a href="https://www.buildersmart.in/electrical/modular-switches-and-sockets">Modular Switches and Sockets</a><a href="https://www.buildersmart.in/electrical/electric-panels">Electric Panels</a><a href="https://www.buildersmart.in/electrical/others">Others</a><a href="https://www.buildersmart.in/electrical/switch-gear-db-mcb-rccb-etc">Switch Gear (DB/MCB/RCCB etc.)</a>
+        </div>
+        <div class="cat-links">
+        <span>Plumbing : </span>
+        <a href="https://www.buildersmart.in/plumbing-html/cpvc-pipes-and-fittings">CPVC Pipes and Fittings</a><a href="https://www.buildersmart.in/plumbing-html/upvc-pipes-and-fittings">UPVC Pipes and Fittings</a><a href="https://www.buildersmart.in/plumbing-html/swr-pipes-and-fittings">SWR Pipes and Fittings</a><a href="https://www.buildersmart.in/plumbing-html/specials-and-accessories">Specials and Accessories</a>
+        </div>
+        <div class="cat-links">
+        <span>Wooden Products : </span>
+        <a href="https://www.buildersmart.in/wooden-products/plywood">Plywood</a><a href="https://www.buildersmart.in/wooden-products/block-boards">Block Boards</a><a href="https://www.buildersmart.in/wooden-products/decorative-laminates">Decorative Laminates</a>
+        </div>
+        <div class="cat-links">
+        <span>Tiles : </span>
+        <a href="https://www.buildersmart.in/tiles/floor-tiles">Floor Tiles</a><a href="https://www.buildersmart.in/tiles/wall-tiles">Wall Tiles</a><a href="https://www.buildersmart.in/tiles/parking-tiles">Parking Tiles</a><a href="https://www.buildersmart.in/tiles/vitrified-tiles">Vitrified Tiles</a>
+        </div>
+        <div class="cat-links">
+        <span>Bathroom Accessories : </span>
+        <a href="https://www.buildersmart.in/bathroom-accessories/faucets">Faucets</a><a href="https://www.buildersmart.in/bathroom-accessories/showers">Showers</a><a href="https://www.buildersmart.in/bathroom-accessories/sanitaryware">Sanitaryware</a><a href="https://www.buildersmart.in/bathroom-accessories/flushing-systems">Flushing Systems</a><a href="https://www.buildersmart.in/bathroom-accessories/other-accessories">Other Accessories</a>
+        </div>
+        <div class="cat-links">
+        <span>Hardware Fixtures : </span>
+        <a href="https://www.buildersmart.in/hardware-fixtures/luxury-handles">Luxury Handles</a><a href="https://www.buildersmart.in/hardware-fixtures/premium-handles">Premium Handles</a><a href="https://www.buildersmart.in/hardware-fixtures/stainless-steel-handles">Stainless Steel Handles</a><a href="https://www.buildersmart.in/hardware-fixtures/stainless-steel-pull-handles">Stainless Steel Pull Handles</a><a href="https://www.buildersmart.in/hardware-fixtures/mortise-locks">Mortise Locks</a><a href="https://www.buildersmart.in/hardware-fixtures/laches-and-hinges">Latches and Hinges</a><a href="https://www.buildersmart.in/hardware-fixtures/drawer-and-cabinet-hardware">Drawer and Cabinet Hardware</a><a href="https://www.buildersmart.in/hardware-fixtures/euro-profile-cylinders">Euro Profile Cylinders</a>
+        </div>
+        <div class="cat-links">
+        <span>Paints & Finishes : </span>
+        <a href="https://www.buildersmart.in/paints-and-finishes/interiors">Wall Care Putty</a><a href="https://www.buildersmart.in/paints-and-finishes/decorative-paint-coating">Decorative Paint Coating</a><a href="https://www.buildersmart.in/paints-and-finishes/texture-finishes">Texture & Wall Care Finishes</a>
+        </div>
+        <div class="cat-links">
+        <span>Lighting & Fixtures : </span>
+        <a href="https://www.buildersmart.in/lighting-products/commercial-led-lighting">Indoor Luminaires</a><a href="https://www.buildersmart.in/lighting-products/outdoor-luminaires">Outdoor Luminaires</a><a href="https://www.buildersmart.in/lighting-products/lighting-electronics-and-controls">Lighting Electronics and Controls</a>
+        </div>
+        <div class="cat-links">
+        <span>Natural Stones : </span>
+        <a href="https://www.buildersmart.in/naturalstones/granites">Granites</a><a href="https://www.buildersmart.in/naturalstones/granites">Marbles</a>
+        </div>
+        <div class="cat-links">
+        <span>RMC (Ready Mix Concrete) : </span>
+        <a href="https://www.buildersmart.in/rmc-68">RMC (Ready Mix Concrete)</a>
+        </div>
+        <div class="cat-links">
+        <span>Roofing Solutions : </span>
+        <a href="https://www.buildersmart.in/roofing-solutions">Roofing Solutions</a>
+        </div>
+        <div class="cat-links">
+        <span>UPVC Doors & Windows : </span>
+        <a href="https://www.buildersmart.in/upvcdoors-windows/upvc-doors">UPVC Doors</a><a href="https://www.buildersmart.in/upvcdoors-windows/upvc-windows">UPVC Windows</a>
+        </div>
+        <div class="cat-links">
+        <span>Home Automation : </span>
+        <a href="https://www.buildersmart.in/home-automation">Home Automation</a>
+        </div>
+        <div class="cat-links">
+        <span>Home Decor : </span>
+        <a href="https://www.buildersmart.in/home-decor/interior-exterior">Interior/Exterior</a><a href="https://www.buildersmart.in/home-decor/interior-exterior/home-accessories">Home Accessories</a>
+        </div>
+        <div class="cat-links">
+        <span>Modular Kitchen : </span>
+        <a href="https://www.buildersmart.in/modular-kitchen/ro-system">RO System</a><a href="https://www.buildersmart.in/modular-kitchen/accessories">Accessories</a>
+        </div>
+        <div class="cat-links">
+        <span>Construction Chemicals : </span>
+        <a href="https://www.buildersmart.in/construction-chemicals">Construction Chemicals</a>
+        </div>
+        <div class="cat-links">
+        <span>Glass Hardware : </span>
+        <a href="https://www.buildersmart.in/glass-hardware">Glass Hardware</a>
+        </div>
+        </div> </div>
+        </div>
+        </div>
+        <div class="footer-about-content">
+        <div class="footer-about-txt">
+        </div>
+        </div>
+        <div class="copyright-block">
+        <div class="copyright">
+        <div class="row">
+        <div class="col-md-12 text-center copyright">
+        <address>Copyright &copy; 2020 BuildersMART. All Rights Reserved.</address>
+        </div>
+        </div>
+        </div>
+        </div>
+        <a id="pt_backontop" class="fa-angle-up" href="#" title="Back to top"></a>
+        </footer>
+        
+        
+        
+        <link rel="stylesheet" type="text/css" href="https://cdn-media.buildersmart.in/media/css_secure/cfe09beab9f2a76411921d68c2b60128.css" media="all" />

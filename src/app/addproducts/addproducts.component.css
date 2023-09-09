@@ -1,0 +1,83 @@
+/* form{
+    width: 250px;
+    height: 500px;
+    background: linear-gradient(to top,rgba(0, 0, 0,0.8)50%,rgba(0,0,0,0.8)50%,);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 10px;
+    padding: 25px;
+    position: absolute;
+    font-style: italic;
+  
+    transform: translate(-50%,-50%);
+    background-color: rgba(240, 226, 123, 0.708);
+   
+    border-radius: 25px;
+    box-shadow: 0 10px rgba(182, 182, 157, 0.682);
+    transform: translate(-50%,-50%);
+    background-color: #fff;
+    box-shadow: 0 10px rgb(110,110,2);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'poppins', sans-serif;
+}
+.body{
+      background-color: darkgrey;
+}
+
+ .container{
+    background-image:('assets/ga.jpg') ;
+ } */
+ 
+ .gradient-custom-2 {
+    background: #fccb90;
+     background: -webkit-linear-gradient(to right, #ecddd3, #cae3e3, #ffffffa7, #d8e0c1); 
+   
+    background: linear-gradient(to right, #eaeee2, #ccf0ee, #98d1ec, #eae9e5);
+    }
+    @media (min-width: 768px) {
+    .gradient-form {
+    height: 100vh !important;
+    }
+    .h4{
+        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        color: rgb(92, 51, 51);
+    }
+    }
+    /* form{
+        width: 250px;
+        height: 380px;
+        background: linear-gradient(to top,rgba(0, 0, 0,0.8)50%,rgba(0,0,0,0.8)50%,);
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        border-radius: 10px;
+        padding: 25px;
+        position: absolute;
+        font-style: italic;
+        
+        transform: translate(-50%,-50%);
+        background-color: rgba(240, 226, 123, 0.708);
+       
+        border-radius: 20px;
+        box-shadow: 0 10px rgba(225, 225, 29, 0.682);
+        transform: translate(-50%,-50%);
+        background-color: rgb(242, 242, 227);
+        box-shadow: 0 10px rgb(27, 27, 27);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'poppins', sans-serif;
+    } */
+    /* body{
+        background: #fccb90;
+        background: -webkit-linear-gradient(to right, #ecddd3, #cae3e3, #ffffffa7, #d8e0c1); 
+      
+       background: linear-gradient(to right, #eaeee2, #ccf0ee, #98d1ec, #eae9e5);
+    } */
+    
+     

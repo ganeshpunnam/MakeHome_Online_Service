@@ -1,0 +1,72 @@
+<div class="container">
+  <!-- <div class="col col_md-4 offset_5">
+ <a class="btn btn-primary" routerLink="userRegister">userlogin</a>
+  </div>> -->
+  <li class="btn btn-primary">
+    <a class="nav-link " routerLink="AddProducts">AddProducts</a>
+  </li>
+  <form #value="ngForm" (ngSubmit)="search(value.value)">
+    <input type="text" ngModel name="search" #name="ngModel">
+    <button type="submit" class="btn btn-info" (click)=" ShowAll()">Search</button>
+  </form>
+
+    <table border="1" class="table table-striped table-hover">
+     
+        <thead class="btn-info">
+          <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>price</th>
+            <th>Quantity</th>
+            <th>Image</th>
+            <th>Dsc</th>
+            <th>P_C_Id</th>
+            <th>Brand</th>
+            <th>Action</th>
+
+            
+          </tr>
+        </thead >
+        <tbody *ngFor="let  e of sales" >
+          <tr style="background-color:aquamarine ;">
+            <td>{{e.id}}</td>
+            <td>{{e.name }}</td>
+            <td>{{e.price}}</td>
+            <td>{{e.quantity}}</td>
+            <!-- <td>{{e.image}}</td> -->
+            <td><img style="width: 120px;" src="{{e.image}}" alt=""></td>
+            <td>{{e.dsc}}</td>
+            <td>{{e.pcid}}</td>
+            <td>{{e.brand}}</td>
+            <td>    <button type="submit" class="btn btn-success" data-toggle="modal" data-target="#mymodal"(click)="update(e)">Update</button>
+              <button (click)="delete(e.id)" class="btn btn-danger">Delete</button></td>
+          </tr>
+        </tbody>
+      </table>
+      
+      <button type="button" routerLink="/Admin" class="btn btn-dark">Back</button>
+
+    
+     
+</div>
+<div class="modal" id="mymodal" role="dialog">
+  <div class="modal-content">
+      <div class="container">
+          <div>
+              <form #add="ngForm" (ngSubmit)="editproduct(add.value)">
+                 product Id: <input type="hidden" ngModel name="id" [(ngModel)]=" product.id"><br>
+                 product Name: <input ngModel name="name" [(ngModel)]=" product.name"><br>
+                 product Price: <input ngModel name="price" [(ngModel)]=" product.price"><br>
+                 product quantity: <input ngModel name="quantity" [(ngModel)]=" product.quantity"><br>
+                 product Image: <input ngModel name="image" [(ngModel)]=" product.image"><br>
+                 product Description : <input ngModel name="dsc" [(ngModel)]=" product.dsc"><br>
+                 product Category Id: <input ngModel name="pcid" [(ngModel)]=" product.pcid"><br>
+                 product brand : <input ngModel name="brand" [(ngModel)]=" product.brand"><br>
+                  <button>submit</button>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+      

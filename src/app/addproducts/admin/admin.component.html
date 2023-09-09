@@ -1,0 +1,152 @@
+<!-- <div img src="/assets/img1.jpg" height="760px" width="1535px">
+    <div class="buttons">
+        <i class="fa-solid fa-display"></i>
+        <button type="button" routerLink="rest" class="btn btn-primary btn-lg">Display Products</button>&nbsp;;&nbsp;&nbsp;
+        <button type="button"  routerLink="AddProducts" class="btn btn-primary btn-lg">Insert Products</button>&nbsp;&nbsp;&nbsp;
+        <button type="button"  routerLink="orders" class="btn btn-primary btn-lg">Display Orders</button>&nbsp;&nbsp;&nbsp;
+        <button type="button"  routerLink="userdata" class="btn btn-primary btn-lg">Display Userdata</button>&nbsp;&nbsp;&nbsp;
+       
+        
+        
+        <button type="button" routerLink="login" class="btn btn-primary btn-lg">LogOut</button>
+    
+    </div>
+    </div>
+    <div><img [src]="myimage" alt="img not found" width="100%" height="760px"></div>
+    -->
+    <div  class="toast show" role="alert" aria-live="assertive" aria-atomic="true" style="float:right;" data-autohide="true">
+        <div class="toast-body bg-success" style="color: aliceblue;">
+            login successfull
+        </div>
+    </div>
+    <br><br>
+    <div class="card-group">
+         <!-- --------------------------------All Products-------------------------------- -->
+        <div class="card text-white bg-primary mb-3" style="max-width: 40rem;">
+            <!-- class="card text-white bg-primary mb-3 " -->
+            <div class="#add">
+                <h4 class="#brand">click to see products</h4>
+                <button class="btn btn-md bg-warning" (click)="showprod()">Products</button>
+            </div>
+        </div><br>
+        <!-- --------------------------------All Orders-------------------------------- -->
+        <div class="card text-white bg-secondary mb-3" style="max-width: 40rem;">
+            <div class="card-body">
+                <h4 class="card-title">click to see orders</h4>
+                <span><button class="btn btn-md bg-warning" (click)="showorder()">Orders</button></span>
+            </div>
+        </div><br>
+        <!-- -----------------all users----------------------------------------------------------- -->
+        <div class="card text-white bg-success mb-3" style="max-width: 40rem;">
+            <div class="card-body">
+                <h4 class="card-title">click to see Users</h4>
+                <button class="btn btn-md bg-warning" (click)="showusers()">Users</button>
+            </div>
+        </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <button routerLink="/login" class="btn btn-danger" style="align-items:center;">
+            <i style="font-size: 30px;" class="fa fa-sign-out"></i>
+            <div style="font-size: 8px;" class="badge bg-dark"></div>
+        </button>
+    </div>
+
+    
+
+
+    <div *ngIf="!isCollapsed">
+        <button class="btn btn-md bg-warning" (click)="addprod()">Add Product</button>
+        <table class="table table-hover table-condensed table-stripped">
+            <thead>
+                <tr class=" bg-black" style="color: white">
+                    <th>ID</th>
+                    <th>NAME</th>
+                    <th>price</th>
+                    <th>Quantity</th>
+                    <th>Image</th>
+                    <th>Dsc</th>
+                    <th>P_C_Id</th>
+                    <th>Brand</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let e of products" >
+                    <td>{{e.id}}</td>
+            <td>{{e.name }}</td>
+            <td>{{e.price}}</td>
+            <td>{{e.quantity}}</td>
+            <!-- <td>{{e.image}}</td> -->
+            <td><img style="width: 120px;" src="{{e.image}}" alt=""></td>
+            <td>{{e.dsc}}</td>
+            <td>{{e.pcid}}</td>
+            <td>{{e.brand}}</td>
+                    <td>
+                        <button type="submit" class="btn btn-sm bg-primary" (click)="editprod(e.id)">Edit Product</button>&nbsp;&ensp;
+                    <button   (click)="delete(e.id)" class="btn btn-sm bg-danger" style="font-size: 15px;">Delete Product</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- -------------------------------------------------orders table--------------------------------------- -->
+     <div  *ngIf="!orderCollapsed">
+          <table class="table table-hover table-condensed table-stripped">
+            <thead>
+                <tr class=" bg-black" style="color: white">
+                    <th>Order Id</th>
+    
+                    <th>Product Id</th>
+                    <th>User Id</th>
+                    <th>Product Price</th>
+                    <th>Product Name</th>
+                   
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let o of waiter" >
+                    <td>{{o.id}}</td>
+     
+       
+        <td>{{o.u_id}}</td>
+        <td>{{o.o_id}}</td>
+       
+        <td>{{o.p_price}}</td>
+        <td>{{o.p_name}}</td>
+        <td>
+                    
+                    
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <!-- -------------------------------------------------USERS table--------------------------------------- -->
+    <div *ngIf="!userCollapsed">
+        <table class="table table-hover table-condensed table-stripped">
+          <thead>
+              <tr class=" bg-black" style="color: white">
+                <th>User Id</th>
+                <th>User Name</th>
+                <th>User Mail Id</th>
+                <th>Password</th>
+                <th>User Phone Number</th>
+                <th>User Gender</th>
+                <td>age</td>
+                
+                
+                <th>User Type</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr *ngFor="let u of users" >
+                <td>{{u.u_id}}</td>
+                <td>{{u.u_name }}</td>
+                <td>{{u.u_gmail}}</td>
+                <td>{{u.u_password}}</td>
+                <td>{{u.u_number}}</td>
+        
+                <td>{{u.u_gender}}</td>
+                <td>{{u.u_age}}</td>
+                <td>{{u.u_type}}</td>
+              </tr>
+          </tbody>
+      </table>
+    </div> 

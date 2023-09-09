@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "ng serve --proxy-config proxy.json",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test"
@@ -18,8 +18,15 @@
     "@angular/platform-browser": "^14.2.0",
     "@angular/platform-browser-dynamic": "^14.2.0",
     "@angular/router": "^14.2.0",
+    "@types/crypto-js": "^4.1.1",
+    "bootstrap": "^5.2.3",
+    "crypto-js": "^4.1.1",
+    "ng-angular-popup": "^0.2.0",
+    "ngx-owl-carousel-o": "^14.0.1",
+    "owl.carousel": "^2.3.4",
     "rxjs": "~7.5.0",
-    "tslib": "^2.3.0",
+    "sweetalert2": "^11.6.14",
+    "tslib": "^2.4.1",
     "zone.js": "~0.11.4"
   },
   "devDependencies": {

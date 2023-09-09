@@ -1,0 +1,32 @@
+<h1 align="center"><b>Order Details</b></h1>
+<div class="container">
+  <table class="table table-bordered table-stripped table-hover">
+    <thead class="bg-info">
+      <tr>
+        <th>Order Id</th>
+    
+        <th>Product Id</th>
+        <th>User Id</th>
+        <th>Product Price</th>
+        <th>Product Name</th>
+       
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody *ngFor="let o of order" class="bg-primary">
+      <tr>
+        <td>{{o.id}}</td>
+     
+       
+        <td>{{o.u_id}}</td>
+        <td>{{o.o_id}}</td>
+       
+        <td>{{o.p_price}}</td>
+        <td>{{o.p_name}}</td>
+        <td>
+          <button (click)="delete(o.o_id)" class="btn btn-danger">Delete</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
